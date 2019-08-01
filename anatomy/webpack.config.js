@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    anatomy: path.resolve(__dirname, 'src/index.js'),
+    ['aetna-button']: path.resolve(__dirname, 'src/aetna-button.js'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -11,6 +11,7 @@ module.exports = {
   resolve: {
     extensions: ['.jsx', '.js'],
   },
+  devtool: 'cheap-module-eval-source-map',
   module: {
     rules: [
       {
@@ -28,13 +29,7 @@ module.exports = {
         test: /\.css$/,
         use: [
           {
-            loader: 'css-loader',
-            options: {
-              localIdentName: '[name]__[local].[hash:base64:5]',
-              modules: true,
-              importLoaders: 1,
-              sourceMap: true,
-            },
+            loader: 'raw-loader',
           },
           {
             loader: 'sass-loader',

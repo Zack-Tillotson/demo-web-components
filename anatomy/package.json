@@ -2,16 +2,20 @@
   "name": "anatomy-web-components",
   "version": "1.0.0",
   "scripts": {
-    "add-dep-reg": "yarn config set @aetnadigital:registry https://nexus.aetnadigital.net/repository/npm/"
+    "add-dep-reg": "yarn config set @aetnadigital:registry https://nexus.aetnadigital.net/repository/npm/",
+    "build": "make build"
   },
   "devDependencies": {
     "@aetnadigital/anatomy": "^1.1.1",
     "@babel/core": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
+    "classnames": "^2.2.6",
     "css-loader": "^3.1.0",
+    "node-sass": "^4.12.0",
     "raw-loader": "^3.1.0",
     "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "sass-loader": "^7.1.0",
     "webpack": "^4.38.0",
     "webpack-cli": "^3.3.6"

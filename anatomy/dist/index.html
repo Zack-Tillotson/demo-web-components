@@ -28,12 +28,16 @@
         font-size: 10rem;
       }
     </style>
-    <script src="./aetna-button.js" type="module"></script>
+    <link href="./anatomy.css" rel="stylesheet">
+    <script src="./aetna-button.js"></script>
   </head>
   <body>
+
     <h1>What's in the box?</h1>
-    <aetna-button appearance="primary" id="control-btn">Show me!</aetna-button>
+    <aetna-button appearance="primary" id="control-btn">Show me! (Primary)</aetna-button>
+    <aetna-button appearance="tertiary" id="control-btn">Show me! (Tertiary)</aetna-button>
     <div id="image-box" class="image-box unopened"></div>
+
     <script>
       function handleClick(e) {
         const ele = document.getElementById('image-box');

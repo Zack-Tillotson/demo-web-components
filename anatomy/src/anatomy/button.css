@@ -1,6 +1,5 @@
-@import 'styles/breakpoints';
 
-.btn {
+:host {
   --border-width: 0.125rem;
   --primary-disabled-color: #8F8F8F;
 
@@ -18,8 +17,8 @@
   align-items: center;
 }
 
-.default.btn,
-.primary.btn {
+:host(.default),
+:host(.primary) {
   width: 100%;
   justify-content: center;
 }
@@ -34,27 +33,27 @@
   text-decoration: none;
 }
 
-.default {
+:host {
   background: transparent;
   border: var(--border-width) solid var(--primary-brand);
   border-radius: var(--primary-border-radius);
 }
 
-.default:hover:not(.disabled) {
+:host:hover:not(.disabled) {
   background-color: var(--primary-brand-light-90);
 }
 
-.default:active {
+:host:active {
   background-color: var(--primary-brand-light-90);
   color: var(--primary-brand-shade-20);
   border-color: var(--primary-brand-shade-20);
 }
 
-.default:active svg {
+:host:active svg {
   fill: var(--primary-brand-shade-20);
 }
 
-.default.disabled {
+:host.disabled {
   border-color: var(--black);
   color: var(--black);
   opacity: 0.3;
@@ -65,50 +64,50 @@
   fill: var(--black);
 }
 
-.primary {
+:host([appearance="primary"]) {
   background: var(--primary-brand);
   color: var(--white);
   border-radius: var(--primary-border-radius);
 }
 
-.primary:hover:not(.disabled) {
+:host([appearance="primary"]):hover:not([disabled]) {
   background-color: var(--primary-brand-shade-30);
 }
 
-.primary:active {
+:host([appearance="primary"]):active {
   background-color: var(--primary-brand-shade-50);
 }
 
-.primary.disabled {
+:host([appearance="primary"]).disabled {
   background-color: var(--gray);
   color: var(--primary-disabled-color);
 }
 
-.primary.disabled svg {
+:host([appearance="primary"]).disabled svg {
   fill: var(--primary-disabled-color);
 }
 
-.tertiary {
+:host([appearance="tertiary"]) {
   color: var(--primary-brand);
   padding-left: 0;
   padding-right: 0;
   background: transparent;
 }
 
-.tertiary:active:not(.disabled) {
+:host([appearance="tertiary"]):active:not(.disabled) {
   color: var(--primary-brand-shade-50);
 }
 
-.tertiary:active:not(.disabled) svg {
+:host([appearance="tertiary"]):active:not(.disabled) svg {
   fill: var(--primary-brand-shade-50);
 }
 
-.tertiary.disabled {
+:host([appearance="tertiary"]).disabled {
   color: var(--black);
   opacity: 0.3;
 }
 
-.tertiary.disabled svg {
+:host([appearance="tertiary"]).disabled svg {
   fill: var(--black);
 }
 
@@ -164,12 +163,5 @@ svg.loadingAnimation{
 @keyframes rotate {
   to {
     transform: rotate(360deg);
-  }
-}
-
-@media (--breakpoint-sm) {
-  .default.btn:not(.fullWidth),
-  .primary.btn:not(.fullWidth){
-    width: auto;
   }
 }

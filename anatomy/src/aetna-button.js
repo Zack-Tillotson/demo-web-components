@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Button, {styles} from './anatomy/button.js';
+import ButtonContent from './anatomy/ButtonContent';
 
-class AetnaButton extends HTMLButtonElement {
+class AetnaButton extends HTMLElement {
   connectedCallback() {
+
     this.attachShadow({mode: 'open'});
 
-    const props = {}; // TODO
-    ReactDOM.render(<Button {...props} />, this.shadowRoot);
+    const props = {children: this.innerHTML};
+    ReactDOM.render(<ButtonContent {...props} />, this.shadowRoot);
   }
 }
 
