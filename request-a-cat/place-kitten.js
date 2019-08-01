@@ -2,11 +2,14 @@
   const template = document.createElement('template');
   template.innerHTML = `
     <style>
-      img {
+      :host {
         margin: .25rem;
         padding: 1rem;
-        border: solid .125rem #ccc;
+        border: solid .125rem var(--border-color, #ccc);
         background: white;
+        display: inline-block;
+      }
+      img {
       }
     </style>
     <img
@@ -28,6 +31,8 @@
       const height = this.getAttribute('height');
       const src = `https://placekitten.com/${width}/${height}`;
       this.shadowRoot.getElementById('img').setAttribute('src', src);
+      this.shadowRoot.getElementById('img').setAttribute('width', width);
+      this.shadowRoot.getElementById('img').setAttribute('height', height );
     }
   }
 

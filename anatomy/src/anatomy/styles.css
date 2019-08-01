@@ -1,0 +1,175 @@
+@import 'styles/breakpoints';
+
+.btn {
+  --border-width: 0.125rem;
+  --primary-disabled-color: #8F8F8F;
+
+  font-size: var(--delta-font-size);
+  line-height: var(--delta-line-height);
+  font-weight: 600;
+  /* Random padding spacing here because we want the buttons total height to meet our vertical rhytham (48px) */
+  padding: 0.625rem var(--spacing-unit-x3);
+  border: var(--border-width) solid transparent;
+  color: var(--primary-brand);
+  cursor: pointer;
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.default.btn,
+.primary.btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.btn:hover:not(.disabled),
+.btn:active:not(.disabled) {
+  text-decoration: underline;
+}
+
+.disabled {
+  cursor: not-allowed;
+  text-decoration: none;
+}
+
+.default {
+  background: transparent;
+  border: var(--border-width) solid var(--primary-brand);
+  border-radius: var(--primary-border-radius);
+}
+
+.default:hover:not(.disabled) {
+  background-color: var(--primary-brand-light-90);
+}
+
+.default:active {
+  background-color: var(--primary-brand-light-90);
+  color: var(--primary-brand-shade-20);
+  border-color: var(--primary-brand-shade-20);
+}
+
+.default:active svg {
+  fill: var(--primary-brand-shade-20);
+}
+
+.default.disabled {
+  border-color: var(--black);
+  color: var(--black);
+  opacity: 0.3;
+  background-color: transparent;
+}
+
+.default.disabled svg {
+  fill: var(--black);
+}
+
+.primary {
+  background: var(--primary-brand);
+  color: var(--white);
+  border-radius: var(--primary-border-radius);
+}
+
+.primary:hover:not(.disabled) {
+  background-color: var(--primary-brand-shade-30);
+}
+
+.primary:active {
+  background-color: var(--primary-brand-shade-50);
+}
+
+.primary.disabled {
+  background-color: var(--gray);
+  color: var(--primary-disabled-color);
+}
+
+.primary.disabled svg {
+  fill: var(--primary-disabled-color);
+}
+
+.tertiary {
+  color: var(--primary-brand);
+  padding-left: 0;
+  padding-right: 0;
+  background: transparent;
+}
+
+.tertiary:active:not(.disabled) {
+  color: var(--primary-brand-shade-50);
+}
+
+.tertiary:active:not(.disabled) svg {
+  fill: var(--primary-brand-shade-50);
+}
+
+.tertiary.disabled {
+  color: var(--black);
+  opacity: 0.3;
+}
+
+.tertiary.disabled svg {
+  fill: var(--black);
+}
+
+.iconOnly {
+  background: transparent;
+  padding: 0.625rem;
+  border-radius: var(--primary-border-radius);
+}
+
+.iconOnly:hover:not(.disabled) {
+  background-color: var(--primary-brand-light-90);
+  border: var(--border-width) solid var(--primary-brand);
+}
+
+.iconOnly:active:not(.disabled) {
+  background-color: var(--primary-brand-light-90);
+  border: var(--border-width) solid var(--primary-brand-shade-20);
+}
+
+.iconOnly:active:not(.disabled) svg {
+  fill: var(--primary-brand-shade-20);
+}
+
+.iconOnly.disabled {
+  border: var(--border-width) solid transparent;
+  background-color: transparent;
+  opacity: 0.3;
+}
+
+.iconOnly.disabled svg {
+  fill: var(--black);
+}
+
+.default.fullWidth,
+.primary.fullWidth {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+.iconLeft {
+  margin-right: var(--spacing-unit);
+}
+
+.iconRight  {
+  margin-left: var(--spacing-unit);
+}
+
+svg.loadingAnimation{
+  animation: rotate 1.4s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (--breakpoint-sm) {
+  .default.btn:not(.fullWidth),
+  .primary.btn:not(.fullWidth){
+    width: auto;
+  }
+}
