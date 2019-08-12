@@ -9,6 +9,10 @@
         margin: var(--spacing-unit);
       }
 
+      .control-btn {
+        margin: var(--spacing-unit);
+      }
+
       .image-box {
         display: block;
         width: 75vh;
@@ -55,9 +59,10 @@
 
     <script>
       function handleClick(e) {
-        const ele = document.getElementById('image-box');
-        const {height, width} = ele.getBoundingClientRect();
-        ele.style.background = `url('https://placekitten.com/${parseInt(width)}/${parseInt(height)}') center center no-repeat no-repeat`;
+        var ele = document.getElementById('image-box');
+        var height = ele.getBoundingClientRect().height;
+        var width = ele.getBoundingClientRect().width;
+        ele.style.background = "url('https://placekitten.com/" + parseInt(width) + "/" + parseInt(height) + "') center center no-repeat no-repeat";
         ele.setAttribute('alt', 'It\'s a kitten!');
         ele.classList.remove('unopened');
       }
