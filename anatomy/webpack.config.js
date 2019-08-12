@@ -5,7 +5,7 @@ module.exports = {
     ['aetna-button']: path.resolve(__dirname, 'src/aetna-button.js'),
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs'),
     filename: '[name].js',
   },
   resolve: {
